@@ -1,4 +1,4 @@
-import { User, Seen, Recommendations } from '@/types/user'
+import { User, Seen, Recommendation } from '@/types/user'
 import { Movie } from '@/types/movie'
 
 export interface State {
@@ -8,7 +8,7 @@ export interface State {
     token: string,
     search: Movie[],
     movie: Movie,
-    recommendations: Recommendations[]
+    recommendations: Recommendation[]
 }
 
 const initState: State = {
