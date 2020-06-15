@@ -1,7 +1,14 @@
 import { Commit } from 'vuex'
 import { State } from './state'
 import { verifyGoogleLogin } from '@/api/auth.api'
-import { deleteUser, getSeenMedia, addSeenMedia, updateSeenMedia, deleteSeenMedia } from '@/api/user.api'
+import {
+    deleteUser,
+    getSeenMedia,
+    addSeenMedia,
+    updateSeenMedia,
+    deleteSeenMedia,
+    getRecommendations
+} from '@/api/user.api'
 import { getMovie, searchMovie, getMovieCredits } from '@/api/movie.api'
 
 export const authGoogle = async (
@@ -107,6 +114,17 @@ export const search = async (
     try {
         const res = await searchMovie(text)
         ctx.commit('setSearchResults', res.data.movies)
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+export const loadRecommendations = async (
+    ctx: { commit: Commit, state: State }
+) => {
+    try {
+        const res = await getRecommendations()
+        ctx.commit('setRecommendations', res.data.recommendations)
     } catch (e) {
         console.error(e)
     }
