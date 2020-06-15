@@ -11,7 +11,9 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "gapi",
+      "gapi.auth2"
     ],
     "paths": {
       "@/*": [
