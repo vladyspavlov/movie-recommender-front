@@ -1,8 +1,8 @@
 export interface User {
-    email?: string
-    name: string
-    googleId?: string
-    token?: string
+    name?: string
+    id?: string
+    iat?: number
+    exp?: number
 }
 
 export interface Seen {
