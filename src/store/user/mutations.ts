@@ -1,6 +1,6 @@
 import { State } from './state'
 import { decodeJWT } from '@/utils/decodeJWT'
-import { User, Seen } from '@/types/user'
+import { User, Seen, Recommendation } from '@/types/user'
 import { Movie, MovieCredits } from '@/types/movie'
 
 export const loadState = (state: State) => {
@@ -79,5 +79,10 @@ export const setMovie = (state: State, movie: Movie) => {
 
 export const setMovieCredits = (state: State, credits: MovieCredits) => {
     state.movie.credits = credits
+    localStorage.setItem('vuex', JSON.stringify(state))
+}
+
+export const setRecommendations = (state: State, recommendations: Recommendation[]) => {
+    state.recommendations = recommendations
     localStorage.setItem('vuex', JSON.stringify(state))
 }
