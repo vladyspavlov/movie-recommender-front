@@ -25,4 +25,5 @@ export interface Person {
     homepage?: string | null
     popularity?: number
     translations?: PersonTranslation[]
+    _id?: string // ObjectId
 }
