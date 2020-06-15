@@ -1,5 +1,5 @@
 import httpClient from './httpClient'
-import { Seen } from '../types/user'
+import { Seen, Recommendations } from '../types/user'
 
 const endpoint = '/user'
 
@@ -26,4 +26,8 @@ export const updateSeenMedia = (
 
 export const deleteSeenMedia = (id: string) => {
     return httpClient.delete(endpoint + '/seen/' + id)
+}
+
+export const getRecommendations = () => {
+    return httpClient.get<{ recommendations: Recommendations }>(endpoint + '/recommendations')
 }
