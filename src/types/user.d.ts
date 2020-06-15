@@ -12,3 +12,5 @@ export interface Seen {
     title: string
     posterPath: string
 }
+
+export type Recommendations = Omit<Seen, '_id' | 'score'>
