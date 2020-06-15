@@ -21,7 +21,7 @@ export interface Movie {
     adult?: boolean
     backdropPath?: string | null
     budget?: number
-    genres?: string[] // ObjectId[]
+    genres?: string[]
     homepage?: string | null
     tmdbId?: number
     imdbId?: string | null
@@ -42,6 +42,25 @@ export interface Movie {
     voteAvg?: number
     voteCount?: number
     titles?: MovieTitle[]
-    keywords?: string[] // ObjectId[]
+    keywords?: string[]
     translations?: MovieTranslation[]
+    _id?: string // ObjectId
+    credits?: MovieCredits
+}
+
+export interface MovieCreditsCast {
+    character: string
+    order: number
+}
+
+export interface MovieCredits {
+    _id?: string
+    creditType?: string
+    department?: string
+    job?: string
+    cast?: MovieCreditsCast
+    name?: string
+    profilePath?: string
+    tmdbId?: number
+    imdbId?: string
 }
