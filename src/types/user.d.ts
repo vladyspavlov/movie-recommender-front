@@ -6,7 +6,9 @@ export interface User {
 }
 
 export interface Seen {
-    user: string // ObjectId
+    _id: string // ObjectId
     media: string // ObjectId
     score: number
+    title: string
+    posterPath: string
 }
