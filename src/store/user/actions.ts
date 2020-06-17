@@ -9,7 +9,7 @@ import {
     deleteSeenMedia,
     getRecommendations
 } from '@/api/user.api'
-import { getMovie, searchMovie, getMovieCredits } from '@/api/movie.api'
+import { getMovie, searchMovie, getMovieCredits, getMovieRelated } from '@/api/movie.api'
 
 export const authGoogle = async (
     ctx: { commit: Commit, state: State },
@@ -102,6 +102,18 @@ export const loadMovieCredits = async (
     try {
         const res = await getMovieCredits(id)
         ctx.commit('setMovieCredits', res.data.credits)
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+export const loadMovieRelated = async (
+    ctx: { commit: Commit, state: State },
+    id: string
+) => {
+    try {
+        const res = await getMovieRelated(id)
+        ctx.commit('setMovieRelated', res.data.related)
     } catch (e) {
         console.error(e)
     }
