@@ -46,6 +46,7 @@ export interface Movie {
     translations?: MovieTranslation[]
     _id?: string // ObjectId
     credits?: MovieCredits
+    related?: MovieRelated
 }
 
 export interface MovieCreditsCast {
@@ -64,3 +65,5 @@ export interface MovieCredits {
     tmdbId?: number
     imdbId?: string
 }
+
+export type MovieRelated = Pick<Movie, '_id' | 'title' | 'posterPath'>
