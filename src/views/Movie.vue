@@ -146,7 +146,11 @@ export default Vue.extend({
         seenId: '',
     }),
     async mounted() {
-        await this.initLoad()
+        this.loader = true
+        await this.$store.dispatch('loadMovie', this.$route.params.id)
+        await this.$store.dispatch('loadMovieCredits', this.$route.params.id)
+        await this.$store.dispatch('loadMovieRelated', this.$route.params.id)
+        this.loader = false
     },
     computed: {
         ...mapGetters([ 'movie', 'seen' ]),
@@ -191,18 +195,15 @@ export default Vue.extend({
         }
     },
     watch: {
-        async '$route.params.id'() {
-            await this.initLoad()
-        }
-    },
-    methods: {
-        async initLoad() {
+        '$route.params.id': async function() {
             this.loader = true
             await this.$store.dispatch('loadMovie', this.$route.params.id)
             await this.$store.dispatch('loadMovieCredits', this.$route.params.id)
             await this.$store.dispatch('loadMovieRelated', this.$route.params.id)
             this.loader = false
-        },
+        }
+    },
+    methods: {
         async onEditSeen() {
             if (!this.rated) {
                 await this.$store.dispatch('addSeen', {

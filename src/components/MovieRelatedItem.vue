@@ -50,10 +50,6 @@ export default Vue.extend({
     data: () => ({
         overlay: false
     }),
-    beforeRouteUpdate(to, from, next) {
-        this.name = this.params.name
-        next()
-    },
     methods: {
         openMedia() {
             this.$router.push({ name: 'movie', params: { id: this.id } })
