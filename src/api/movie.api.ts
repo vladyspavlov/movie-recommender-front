@@ -1,5 +1,5 @@
 import httpClient from './httpClient'
-import { Movie, MovieCredits } from '../types/movie'
+import { Movie, MovieCredits, MovieRelated } from '../types/movie'
 
 const endpoint = '/movies'
 
@@ -9,6 +9,10 @@ export const getMovie = (id: string) => {
 
 export const getMovieCredits = (id: string) => {
     return httpClient.get<{ credits: MovieCredits }>(endpoint + '/movie/' + id + '/credits')
+}
+
+export const getMovieRelated = (id: string) => {
+    return httpClient.get<{ related: MovieRelated }>(endpoint + '/movie/' + id + '/related')
 }
 
 export const searchMovie = (text: string) => {
