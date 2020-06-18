@@ -25,10 +25,13 @@ export const changeTheme = (state: State) => {
 
 export const logout = (state: State) => {
     state.user = {}
-    state.token = ''
     state.seen = []
-    localStorage.setItem('token', '')
-    localStorage.setItem('vuex', JSON.stringify(state))
+    state.search = []
+    state.token = ''
+    state.movie = {}
+    state.dark = false
+    state.recommendations = []
+    localStorage.removeItem('vuex')
 }
 
 export const setSeenMedia = (state: State, seen: Seen[]) => {
