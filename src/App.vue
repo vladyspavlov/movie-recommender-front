@@ -97,4 +97,16 @@ export default Vue.extend({
 .h-100 {
     height: 100%;
 }
+
+.no-card-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
 </style>
