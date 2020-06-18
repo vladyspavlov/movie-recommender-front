@@ -18,7 +18,7 @@ export const getMovieRelated = (id: string) => {
 export const searchMovie = (text: string) => {
     return httpClient.get<{ movies: Movie[] }>(endpoint + '/search', {
         params: { s: text },
-        timeout: 15000
+        timeout: 30000
     })
 }
 
