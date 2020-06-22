@@ -29,5 +29,7 @@ export const deleteSeenMedia = (id: string) => {
 }
 
 export const getRecommendations = () => {
-    return httpClient.get<{ recommendations: Recommendation[] }>(endpoint + '/recommendations')
+    return httpClient.get<{ recommendations: Recommendation[] }>(endpoint + '/recommendations', {
+        timeout: 30000
+    })
 }
