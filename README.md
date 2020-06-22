@@ -1,4 +1,4 @@
-# picknwatch_frontend
+# frontend
 
 ## Project setup
 ```
