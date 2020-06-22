@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
 import router from '../router'
 
 const httpClient = axios.create({
-    baseURL: 'https://localhost:3000/api',
+    baseURL: 'http://localhost:3000/api',
     timeout: 5000,
     headers: {
         'Accept': 'application/json',
