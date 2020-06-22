@@ -30,7 +30,7 @@
                     <search-item
                         :id="s._id"
                         :title="s.title"
-                        :poster="s.posterPath"
+                        :poster="s.posterPath ? s.posterPath : 'Null'"
                         :rated="s.rated"
                         :score="s.score"
                         :seenId="s.seenId"
