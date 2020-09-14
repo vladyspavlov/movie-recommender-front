@@ -1,4 +1,4 @@
-# frontend
+# Movie Recommender App Frontend
 
 ## Project setup
 ```
